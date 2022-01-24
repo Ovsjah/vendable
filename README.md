@@ -9,7 +9,7 @@ Vendable - testing project for Seeking Alpha
 $ git clone https://github.com/Ovsjah/vendable.git
 $ cd vendable
 ```
-2. Run `bin/setup` to install dependencies
+2. Run `bundle` to install dependencies
 3. Run `rspec` to run the tests
 4. Run `bin/console` for an interactive prompt
 

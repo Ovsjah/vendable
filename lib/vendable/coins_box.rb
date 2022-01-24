@@ -6,12 +6,12 @@ module Vendable
     SUPPORTED_COINS = %w[0.25 0.5 1 2 3 5].freeze
 
     COINS_AMOUNT = [
-      { value: "0.25", amount: 3 },
-      { value: "0.5", amount: 3 },
-      { value: "1", amount: 3 },
-      { value: "2", amount: 3 },
-      { value: "3", amount: 3 },
-      { value: "5", amount: 3 }
+      { value: "0.25", amount: 7 },
+      { value: "0.5", amount: 7 },
+      { value: "1", amount: 7 },
+      { value: "2", amount: 7 },
+      { value: "3", amount: 7 },
+      { value: "5", amount: 7 }
     ].freeze
 
     attr_reader :coins_amount, :values_cache, :alert
