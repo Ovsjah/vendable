@@ -100,21 +100,25 @@ RSpec.describe Vendable::CoinsBox do
   end
 
   describe "#rollback" do
-    let(:change) { [coin_1, coin_05, coin_025] }
+    let(:coins_change) { [coin_1, coin_05, coin_025] }
 
     it "sets alert" do
-      subject.send(:rollback, change)
+      subject.send(:rollback, coins_change)
       expect(subject.alert).not_to be_nil
     end
 
-    it "reverts change" do
-      expect(subject).to receive(:revert).with(change)
-      subject.send(:rollback, change)
+    it "changes coins amount" do
+      expect { subject.send(:rollback, coins_change) }.to change { subject.coins_amount.size }.by(3)
+    end
+
+    it "removes change" do
+      subject.send(:rollback, coins_change)
+      expect(coins_change).to be_empty
     end
 
     it "drops coins" do
       expect(subject).to receive(:drop_coins)
-      subject.send(:rollback, change)
+      subject.send(:rollback, coins_change)
     end
   end
 

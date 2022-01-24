@@ -65,6 +65,7 @@ RSpec.describe Vendable::Machine do
     before(:each) { subject.insert_coin("3") }
 
     it "returns inserted coins" do
+      expect(subject.cancel).not_to be_empty
       expect(subject.cancel).to all(be_kind_of(Vendable::Coin))
     end
 

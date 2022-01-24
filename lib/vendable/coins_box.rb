@@ -72,12 +72,8 @@ module Vendable
 
     def rollback(change)
       @alert = "Sorry. Not enough change"
-      revert(change)
-      drop_coins
-    end
-
-    def revert(change)
       coins_amount << change.pop until change.empty?
+      drop_coins
     end
 
     def reset_alert
