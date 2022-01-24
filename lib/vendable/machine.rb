@@ -3,7 +3,7 @@
 module Vendable
   # Vending Machine
   class Machine
-    attr_reader :credit, :coins_box, :products_box, :selected
+    attr_reader :credit, :coins_box, :products_box
 
     def initialize
       @credit = Credit.new

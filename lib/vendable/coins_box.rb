@@ -57,9 +57,9 @@ module Vendable
       values_cache.map { |value| remove(value) }
     end
 
-    def present(change)
+    def present(coins)
       info = ""
-      change_counted = change.each_with_object(Hash.new(0)) { |coin, result| result[coin.value] += 1 }
+      change_counted = coins.each_with_object(Hash.new(0)) { |coin, result| result[coin.value] += 1 }
       change_counted.each { |value, count| info += " 'Coin #{value}' * #{count};" }
       info.strip
     end
